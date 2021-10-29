@@ -7,7 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import cwLogo from "../assets/cw.jpeg";
+import grfLogo from "../assets/Grf 2.png";
 import { useAuth } from "../context/AuthContextProvider";
 import { Link, useHistory } from "react-router-dom";
 
@@ -91,12 +91,12 @@ export default function Navbar() {
             aria-label="menu"
             onClick={handleDashboard}
           >
-            <img src={cwLogo} alt="logo" className={classes.logo} />
+            <img src={grfLogo} alt="logo" className={classes.logo} />
           </IconButton>
           <div className={classes.root}>
             <Link to="/" className={classes.login}>
               <Typography variant="h6" className={classes.title}>
-                ──── <span>{"<Clarusway IT />"}</span> BLOG ────
+                ──── <span>{"Giraffe IT BLOG"}</span> ────
               </Typography>
             </Link>
           </div>
