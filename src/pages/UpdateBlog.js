@@ -75,7 +75,7 @@ const UpdateBlog = ({ match }) => {
           className={classes.blogImg}
         />
         <Typography component="h1" variant="h5" className={classes.title}>
-          ── Update Blog ──
+          ── Update Apiary ──
         </Typography>
         <BlogForm blog={updatedBlog} handler={handler} />
       </div>
