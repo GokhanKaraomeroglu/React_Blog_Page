@@ -1,5 +1,5 @@
 import React, { useContext, createContext, useState, useEffect } from "react";
-import { auth, googleProvider } from "../utils/firebaseUtil";
+import { auth, googleProvider, facebookProvider, appleProvider } from "../utils/firebaseUtil";
 
 //! Create context for autentication data
 const AuthContext = createContext();
@@ -37,6 +37,17 @@ const AuthContextProvider = ({ children }) => {
     googleProvider.setCustomParameters({ prompt: "select_account" });
     auth.signInWithPopup(googleProvider);
   }
+  
+ function loginWithFacebook(){
+    facebookProvider.setCustomParameters({'display': 'popup'});
+    auth.signInWithPopup(facebookProvider);
+  }
+
+   function loginWithApple(){
+    appleProvider.setCustomParameters({locale: 'tr'});
+    auth.signInWithPopup(appleProvider);
+  }
+
 
   function resetPassword(email) {
     return auth.sendPasswordResetEmail(email);
