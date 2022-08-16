@@ -14,6 +14,8 @@ import * as yup from "yup";
 import { useAuth } from "../context/AuthContextProvider";
 import loadingGif from "../assets/loading.gif";
 import googlePng from "../assets/google.png";
+import facebookPng from "../assets/facebook.png";
+import applePng from "../assets/apple.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -94,10 +96,16 @@ const ValidationSchema = yup.object().shape({
 
 const LoginAndRegisterForm = (props) => {
   console.log(props);
-  const { loginWithGoogle } = useAuth();
+  const { loginWithGoogle, loginWithFacebook, loginWithApple } = useAuth();
 
   const handleGoogleProvider = () => {
     loginWithGoogle();
+  };
+  const handleFacebookProvider = () => {
+    loginWithFacebook();
+  };
+  const handleAppleProvider = () => {
+    loginWithApple();
   };
 
   const { handleBlur, handleChange, errors, values, touched, isSubmitting } =
@@ -172,7 +180,33 @@ const LoginAndRegisterForm = (props) => {
                     With
                     <img
                       src={googlePng}
-                      alt="google"
+                      alt="Google"
+                      className={classes.googleImg}
+                    />
+                  </Button>
+<Button
+                    fullWidth
+                    variant="contained"
+                    onClick={handleFacebookProvider}
+                    className={classes.googleBtn}
+                  >
+                    With
+                    <img
+                      src={facebookPng}
+                      alt="Facebook"
+                      className={classes.googleImg}
+                    />
+                  </Button>
+<Button
+                    fullWidth
+                    variant="contained"
+                    onClick={handleAppleProvider}
+                    className={classes.googleBtn}
+                  >
+                    With
+                    <img
+                      src={applePng}
+                      alt="Apple"
                       className={classes.googleImg}
                     />
                   </Button>
